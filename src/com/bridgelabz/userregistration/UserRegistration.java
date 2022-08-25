@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     static String first_Name;
+    static String last_Name;
     public static boolean isValidUsername(String name)
     {
         String regex = "^[A-Z][a-z]{3,}$";
@@ -19,9 +20,11 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         System.out.println("Enter First Name : ");
-        Scanner sc=new Scanner(System.in);
-        first_Name=sc.next();
-        System.out.println("First name is :"+isValidUsername(first_Name));
+        Scanner sc = new Scanner(System.in);
+        first_Name = sc.next();
+        System.out.println("First name is :" + isValidUsername(first_Name));
+        System.out.println("Enter Last Name : ");
+        last_Name = sc.next();
+        System.out.println("Last name is :" + isValidUsername(last_Name));
 
-
-}}
+    }}
