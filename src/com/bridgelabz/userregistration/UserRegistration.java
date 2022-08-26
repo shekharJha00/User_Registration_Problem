@@ -9,6 +9,7 @@ public class UserRegistration {
     static String last_Name;
     static String email;
     static String phoneNo;
+    static String password;
     public static boolean isValidUsername(String name)
     {
         String regex = "^[A-Z][a-z]{3,}$";
@@ -39,6 +40,16 @@ public class UserRegistration {
         Matcher m = p.matcher(phoneNo);
         return m.matches();
     }
+    public static boolean isValidPassword(String password)
+    {
+        String passwordregex = ".{8,}$";
+        Pattern p = Pattern.compile(passwordregex);
+        if (password == null) {
+            return false;
+        }
+        Matcher m = p.matcher(password);
+        return m.matches();
+    }
     public static void main(String[] args) {
         System.out.println("Enter First Name : ");
         Scanner sc = new Scanner(System.in);
@@ -53,4 +64,7 @@ public class UserRegistration {
         System.out.println("Enter a valid Phone No with Country code :");
         phoneNo=sc.next();
         System.out.println("Your Phone No is:"+isValidPhoneNo(phoneNo));
+        System.out.println("Enter a valid Password :");
+        password=sc.next();
+        System.out.println("your password is :"+isValidPassword(password));
     }}
