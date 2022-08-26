@@ -8,6 +8,7 @@ public class UserRegistration {
     static String first_Name;
     static String last_Name;
     static String email;
+    static String phoneNo;
     public static boolean isValidUsername(String name)
     {
         String regex = "^[A-Z][a-z]{3,}$";
@@ -28,7 +29,16 @@ public class UserRegistration {
         Matcher m = p.matcher(email);
         return m.matches();
     }
-
+    public static boolean isValidPhoneNo(String phoneNo)
+    {
+         String regex = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$";
+        Pattern p = Pattern.compile(regex);
+        if (phoneNo == null) {
+            return false;
+        }
+        Matcher m = p.matcher(phoneNo);
+        return m.matches();
+    }
     public static void main(String[] args) {
         System.out.println("Enter First Name : ");
         Scanner sc = new Scanner(System.in);
@@ -39,6 +49,8 @@ public class UserRegistration {
         System.out.println("Last name is :" + isValidUsername(last_Name));
         System.out.println("Enter your email :");
         email=sc.next();
-        System.out.println("Your email Address :"+isValidEmail(email));
-
+        System.out.println("Your email Address is:"+isValidEmail(email));
+        System.out.println("Enter a valid Phone No with Country code :");
+        phoneNo=sc.next();
+        System.out.println("Your Phone No is:"+isValidPhoneNo(phoneNo));
     }}
