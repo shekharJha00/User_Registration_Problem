@@ -42,7 +42,7 @@ public class UserRegistration {
     }
     public static boolean isValidPassword(String password)
     {
-        String passwordregex = "(?=.{8,}).*[A-Z].*$";
+        String passwordregex = "(?=.*[A-Z])(?=.*[0-9]).{8,}$";
         Pattern p = Pattern.compile(passwordregex);
         if (password == null) {
             return false;
