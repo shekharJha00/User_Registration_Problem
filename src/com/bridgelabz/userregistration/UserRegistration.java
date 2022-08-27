@@ -1,5 +1,6 @@
 package com.bridgelabz.userregistration;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,7 +33,7 @@ public class UserRegistration {
     }
     public static boolean isValidPhoneNo(String phoneNo)
     {
-         String regex = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$";
+         String regex = "^(\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$";
         Pattern p = Pattern.compile(regex);
         if (phoneNo == null) {
             return false;
@@ -51,20 +52,23 @@ public class UserRegistration {
         return m.matches();
     }
     public static void main(String[] args) {
+
         System.out.println("Enter First Name : ");
         Scanner sc = new Scanner(System.in);
-        first_Name = sc.next();
+        first_Name = sc.nextLine();
         System.out.println("First name is :" + isValidUsername(first_Name));
         System.out.println("Enter Last Name : ");
-        last_Name = sc.next();
+        last_Name = sc.nextLine();
         System.out.println("Last name is :" + isValidUsername(last_Name));
         System.out.println("Enter your email :");
-        email=sc.next();
+        email=sc.nextLine();
         System.out.println("Your email Address is:"+isValidEmail(email));
         System.out.println("Enter a valid Phone No with Country code :");
-        phoneNo=sc.next();
+        phoneNo=sc.nextLine();
         System.out.println("Your Phone No is:"+isValidPhoneNo(phoneNo));
         System.out.println("Enter a valid Password :");
-        password=sc.next();
+        password=sc.nextLine();
         System.out.println("your password is :"+isValidPassword(password));
+
+
     }}
